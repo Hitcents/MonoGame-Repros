@@ -14,8 +14,11 @@ namespace SmallerBackbuffer
 		{
 			_graphics = new GraphicsDeviceManager(this);
 			_graphics.IsFullScreen = true;
-			_graphics.PreferredBackBufferWidth -= 100;
-			_graphics.PreferredBackBufferHeight -= 100;
+
+			//Here I'm modifying the backbuffer to "zoom in" the game to act as if it were 480x320 (height adjusted to keep ratio)
+			//Comment this line, the game doesn't render any differently
+			_graphics.PreferredBackBufferHeight = (int)(_graphics.PreferredBackBufferHeight * 480d / _graphics.PreferredBackBufferWidth);
+			_graphics.PreferredBackBufferWidth = 480;
 		}
 		
 		protected override void LoadContent()
