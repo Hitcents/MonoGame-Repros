@@ -27,7 +27,7 @@ namespace TextureAt2048
 		{
 			GraphicsDevice.Clear (Color.LightGray);
 
-			_spriteBatch.Begin ();
+			_spriteBatch.Begin (SpriteSortMode.Deferred, BlendState.NonPremultiplied);
 			_spriteBatch.Draw (_texture, Vector2.Zero, Color.White);
 			_spriteBatch.End ();
 		}
